@@ -11,15 +11,15 @@ fetch(urlRandomImg).then((response) => {
     {
     // Разметка для карточки
     const html = `
-    <div>
+    <div class="delete">
         <div class="wrapper-img">
-            <img src="${data.urls.regular}" alt="space" class="img-space">  
+            <img src="${data.urls.regular}" alt="space" class="img-photo" width="600px" height="600px">  
         </div>
     </div>`;
     main.insertAdjacentHTML('beforeend', html);
 }});
 function removeImg() {
-    const prevImg = document.querySelector('.wrapper-img');
+    const prevImg = document.querySelector('.delete');
     if(prevImg) prevImg.remove();
 }
 // Отправка формы
@@ -40,52 +40,90 @@ form.onsubmit = function (e) {
         removeImg()
          // Разметка для карточки
          const html = `
-            <div class="wrapper-img">
+            <div class="delete">
             <ul class="images-grid">
             <li class="img-item">
-                <img src="${data.results[0].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[0].cover_photo.alt_description}</p>
-                <p class="author">${data.results[0].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[0].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[0].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[0].cover_photo.user.name}</p>
+                </div>
             </li>
             <li class="img-item">
-                <img src="${data.results[1].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[1].cover_photo.alt_description}</p>
-                <p class="author">${data.results[1].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[1].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[1].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[1].cover_photo.user.name}</p>
+                </div
             </li>
             <li class="img-item">
-                <img src="${data.results[2].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[2].cover_photo.alt_description}</p>
-                <p class="author">${data.results[2].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[2].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name:  ${data.results[2].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[2].cover_photo.user.name}</p>
+                </div
+            </li>
+            
+            <li class="img-item">
+                <div class="wrapper-img-item">
+                    <img src="${data.results[3].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[3].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[3].cover_photo.user.name}</p>
+                </div>
             </li>
             <li class="img-item">
-                <img src="${data.results[3].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[3].cover_photo.alt_description}</p>
-                <p class="author">${data.results[3].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[4].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[4].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[4].cover_photo.user.name}</p>
+                </div
             </li>
             <li class="img-item">
-                <img src="${data.results[4].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[4].cover_photo.alt_description}</p>
-                <p class="author">${data.results[4].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[5].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name:  ${data.results[5].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[5].cover_photo.user.name}</p>
+                </div
+            </li>
+
+            <li class="img-item">
+                <div class="wrapper-img-item">
+                    <img src="${data.results[6].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[6].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[6].cover_photo.user.name}</p>
+                </div>
             </li>
             <li class="img-item">
-                <img src="${data.results[5].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[5].cover_photo.alt_description}</p>
-                <p class="author">${data.results[5].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[7].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name: ${data.results[7].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[7].cover_photo.user.name}</p>
+                </div
             </li>
             <li class="img-item">
-                <img src="${data.results[6].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[6].cover_photo.alt_description}</p>
-                <p class="author">${data.results[6].cover_photo.user.first_name}</p>
-            </li>
-            <li class="img-item">
-                <img src="${data.results[7].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[7].cover_photo.alt_description}</p>
-                <p class="author">${data.results[7].cover_photo.user.first_name}</p>
-            </li>
-            <li class="img-item">
-                <img src="${data.results[8].cover_photo.urls.regular}" alt="space" class="img-space">
-                <p class="img-name">${data.results[8].cover_photo.alt_description}</p>
-                <p class="author">${data.results[8].cover_photo.user.first_name}</p>
+                <div class="wrapper-img-item">
+                    <img src="${data.results[8].cover_photo.urls.regular}" alt="space" class="img-photo" width="300px" height="300px">
+                </div>
+                <div class='img-description'>
+                    <p class="img-name">Name:  ${data.results[8].cover_photo.alt_description}</p>
+                    <p class="author">Prod by: ${data.results[8].cover_photo.user.name}</p>
+                </div
             </li>
         </ul>
                 
